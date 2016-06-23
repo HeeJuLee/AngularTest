@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ng-controller="AppCtrl">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<title></title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h2>Chapter 1 <small>Hello, World</small></h2>
+		</div>
+		<div class="jumbotron">
+			<h1>{{name || 'World'}}</h1>
+			<label for="name">Enter your name</label>
+			<input type="text" ng-model="name" class="form-control input-lg" id="name">
+		</div>
+
+		<ul>
+			<li>부트스트랩 설치</li>
+				<p><a href="http://getbootstrap.com">http://getbootstrap.com</a></p>
+			<li>AngularJS 설치</li>
+				<p><a href="https://angularjs.org">https://angularjs.org</a></p>
+			<li>부트스트래핑</li>
+				<p>ng-app 추가</p>
+			<li>sublime text plugin 설치</li>
+				<p>http://www.hans.or.kr/2014/01/sublime-text-10.html</p>
+		</ul>
+	</div>
+</body>
+</html>
