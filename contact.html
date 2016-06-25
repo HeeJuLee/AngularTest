@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='testApp'>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>Contact Test</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body ng-controller="contactController">
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Brand-Logo</a>
+	</div>
+	
+	<div class="collapse navbar-collapse" id="nav-toggle">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Browse</a></li>
+            <li><a href="/add">Add Contact</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+            <input type="text" class="form-control" placeholder="Search">
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="page-header">
+			<h2>Chapter 2 <small>Directive: ng-click, ng-init, ng-show, ng-hide, ng-if, ng-repeat, ng-class, ng-style, ng-cloak</small></h2>
+		</div>
+		<h1>{{name}}</h1>
+		<div ng-init="name = 'Hello, directive'"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<ul>
+				<li ng-repeat="contact in contacts">
+					{{contact.name}} - {{contact.phone}}, {{contact.email}}
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<button ng-click="clickHandler()">click me</button>
+			
+				<div ng-hide="isHidden">사라질 공간</div>
+				<div ng-if="isHidden">ng-if로 사라질 공간</div>
+				
+				<label><input type="checkbox" ng-model="center"> text-center</label>
+				<label><input type="checkbox" ng-model="error"> text-danger</label>
+				<label><input type="checkbox" ng-model="styler"> ng-style</label>
+				
+				<p ng-class="{'text-center': center, 'text-danger': error}" ng-style="styleList()">테스트 ng-class ng-style </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
